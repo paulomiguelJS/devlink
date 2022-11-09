@@ -1,4 +1,6 @@
 import { Container, LinksContainer } from "./styles";
+import { Social } from "../../components/Social";
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 
 export function Home() {
   return (
@@ -34,6 +36,17 @@ export function Home() {
           </a>
         </section>
       </LinksContainer>
+      <footer>
+        <Social url="https://www.google.com">
+          <FaFacebook size={35} color="#FFF" />
+        </Social>
+        <Social url="https://www.google.com">
+          <FaYoutube size={35} color="#FFF" />
+        </Social>
+        <Social url="https://www.google.com">
+          <FaInstagram size={35} color="#FFF" />
+        </Social>
+      </footer>
     </Container>
   );
 }
