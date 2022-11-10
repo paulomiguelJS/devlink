@@ -5,28 +5,30 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 10rem;
   height: 100vh;
   width: 100%;
 `;
 
 export const FormContainer = styled.form`
-  display: flexl;
+  display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 600px;
+  width: 80%;
+  max-width: 400px;
 
   input {
     border: 0;
     height: 2rem;
     margin-bottom: 1rem;
-    border: 4px;
+    border-radius: 4px;
     padding: 0 8px;
   }
 
   button {
     height: 36px;
     border-radius: 4px;
-    background-color: #3366ff;
+    background: linear-gradient(#e18700, #ffd43a);
+    font-weight: bold;
     border: 0;
     color: #fff;
   }
