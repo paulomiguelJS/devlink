@@ -1,7 +1,8 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../services/firebaseConnection";
+import { toast } from "react-toastify";
 
 import { Logo } from "../../components/Logo";
 import { Container, FormContainer } from "./styles";
@@ -9,6 +10,8 @@ import { Container, FormContainer } from "./styles";
 export function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   function handleLogin(event) {
     event.preventDefault();
@@ -18,9 +21,12 @@ export function Login() {
     }
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
-        console.log("User has been logged successfully");
+        toast.success("Welcome to our plataform");
+
+        navigate("/admin", { replace: true });
       })
       .catch(() => {
+        toast.error("Error, try again");
         console.log("Error");
       });
   }
