@@ -17,7 +17,16 @@ export const Container = styled.div`
 
   span {
     color: #f1f1f1;
+    font-size: 1.2rem;
+
     margin-bottom: 1rem;
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem;
   }
 `;
 
@@ -25,7 +34,7 @@ export const LinksContainer = styled.main`
   display: flex;
   flex-direction: column;
   max-width: 600px;
-  width: 90%;
+  width: 80%;
   text-align: center;
 
   section {
@@ -38,7 +47,7 @@ export const LinksContainer = styled.main`
     transition: transform 0.7s;
 
     &:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
     p {
       font-size: 1rem;
