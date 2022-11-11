@@ -5,6 +5,8 @@ import { auth } from "../../services/firebaseConnection";
 import { toast } from "react-toastify";
 
 import { Logo } from "../../components/Logo";
+import { Input } from "../../components/Input";
+
 import { Container, FormContainer } from "./styles";
 
 export function Login() {
@@ -34,19 +36,20 @@ export function Login() {
     <Container>
       <Logo />
       <FormContainer onSubmit={handleLogin}>
-        <input
+        <Input
           type="email"
           placeholder="Type your best e-mail..."
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <input
+        <Input
           type="password"
           placeholder="********"
           autoComplete="on"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+
         <button type="submit">Log In</button>
       </FormContainer>
     </Container>

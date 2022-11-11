@@ -15,15 +15,7 @@ export const FormContainer = styled.form`
   flex-direction: column;
   width: 80%;
   max-width: 400px;
-
-  input {
-    border: 0;
-    height: 2rem;
-    margin-bottom: 1rem;
-    border-radius: 4px;
-    padding: 0 8px;
-  }
-
+  
   button {
     height: 36px;
     border-radius: 4px;
