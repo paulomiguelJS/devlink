@@ -1,11 +1,12 @@
 import { Container, LinksContainer } from "./styles";
 import { Social } from "../../components/Social";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
+import { Logo } from "../../components/Logo";
 
 export function Home() {
   return (
     <Container>
-      <h1>Dev Links</h1>
+      <Logo />
       <span>See my links</span>
 
       <LinksContainer>

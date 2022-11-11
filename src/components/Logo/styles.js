@@ -12,7 +12,6 @@ export const LogoLink = styled.h1`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 54px;
-  font-weight: bold;
-
+    font-weight: bold;
   }
 `;

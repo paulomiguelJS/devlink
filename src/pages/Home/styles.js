@@ -8,20 +8,6 @@ export const Container = styled.div`
   width: 100%;
   padding: 1rem 0;
 
-  h1 {
-    margin-bottom: 1rem;
-    color: #fff;
-    font-size: 3rem;
-    padding-top: 94px;
-  }
-
-  span {
-    color: #f1f1f1;
-    font-size: 1.2rem;
-
-    margin-bottom: 1rem;
-  }
-
   footer {
     display: flex;
     justify-content: center;
