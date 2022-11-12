@@ -3,8 +3,20 @@ import { Header } from "../../components/Header";
 import { Logo } from "../../components/Logo";
 import { Input } from "../../components/Input";
 
+import { db } from "../../services/firebaseConnection";
+import {
+  addDoc,
+  collection,
+  onSnapshot,
+  query,
+  orderBy,
+  doc,
+  deleteDoc,
+} from "firebase/firestore";
+
 import { MdAddLink } from "react-icons/md";
 import { FiTrash2 } from "react-icons/fi";
+import { toast } from "react-toastify";
 
 import { Container, FormContainer, Preview } from "./styles";
 
@@ -14,11 +26,37 @@ export function Admin() {
   const [backgroundColorInput, setBackgroundColorInput] = useState("#f1f1f1");
   const [textColorInput, setTextColorInput] = useState("#121212");
 
+  async function handleRegister(e) {
+    e.preventDefault();
+    if (nameInput === "" || urlInput === "") {
+      toast.warn("Please, fill all the fields");
+      return;
+    }
+
+    addDoc(collection(db, "links"), {
+      name: nameInput,
+      url: urlInput,
+      bg: backgroundColorInput,
+      color: textColorInput,
+      created: new Date(),
+    })
+      .then(() => {
+        setNameInput("");
+        setUrlInput("");
+        toast.success("The link has been registred");
+
+        console.log("The link has been registred");
+      })
+      .catch((error) => {
+         toast.error("Ops, error to save the link");
+      });
+  }
+
   return (
     <Container>
       <Header />
       <Logo />
-      <FormContainer>
+      <FormContainer onSubmit={handleRegister}>
         <label>Link Name</label>
         <Input
           placeholder="Link Name"
