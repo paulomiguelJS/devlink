@@ -73,6 +73,11 @@ export function Admin() {
       });
   }
 
+  async function handleDeleteLink(id) {
+    const docRef = doc(db, "links", id);
+    await deleteDoc(docRef);
+  }
+
   return (
     <Container>
       <Header />
@@ -125,17 +130,20 @@ export function Admin() {
 
       <h2>My Links</h2>
 
-      <article
-        className="animate-pop"
-        style={{ backgroundColor: "#000", color: "#fff" }}
-      >
-        <p>Telegram</p>
-        <div>
-          <button>
-            <FiTrash2 size={18} color="#fff" />
-          </button>
-        </div>
-      </article>
+      {links.map((item, id) => (
+        <article
+          key={id}
+          className="animate-pop"
+          style={{ backgroundColor: item.bg, color: item.color }}
+        >
+          <p>{item.name}</p>
+          <div>
+            <button onClick={() => handleDeleteLink(item.id)}>
+              <FiTrash2 size={18} color="#fff" />
+            </button>
+          </div>
+        </article>
+      ))}
     </Container>
   );
 }

@@ -5,6 +5,7 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   min-height: 100vh;
+  padding: 0 0 1rem 0;
 
   h2 {
     color: #fff;
@@ -20,6 +21,7 @@ export const Container = styled.div`
     background-color: #423423;
     border-radius: 4px;
     padding: 0.5rem 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
   button {
