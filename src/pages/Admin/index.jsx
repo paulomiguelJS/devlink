@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Header } from "../../components/Header";
 import { Logo } from "../../components/Logo";
 import { Input } from "../../components/Input";
@@ -26,6 +26,27 @@ export function Admin() {
   const [backgroundColorInput, setBackgroundColorInput] = useState("#f1f1f1");
   const [textColorInput, setTextColorInput] = useState("#121212");
 
+  const [links, setLinks] = useState([]);
+
+  useEffect(() => {
+    const linksRef = collection(db, "links");
+    const queryRef = query(linksRef, orderBy("created", "asc"));
+
+    const unsub = onSnapshot(queryRef, (snapshot) => {
+      let list = [];
+      snapshot.forEach((doc) => {
+        list.push({
+          id: doc.id,
+          name: doc.data().name,
+          url: doc.data().url,
+          bg: doc.data().bg,
+          color: doc.data().color,
+        });
+      });
+      setLinks(list);
+    });
+  }, []);
+
   async function handleRegister(e) {
     e.preventDefault();
     if (nameInput === "" || urlInput === "") {
@@ -48,7 +69,7 @@ export function Admin() {
         console.log("The link has been registred");
       })
       .catch((error) => {
-         toast.error("Ops, error to save the link");
+        toast.error("Ops, error to save the link");
       });
   }
 
