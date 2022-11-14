@@ -16,7 +16,7 @@ import {
 
 export function Home() {
   const [links, setLinks] = useState([]);
-  const [socialLinks, setSocialLinks] =  useState({});
+  const [socialLinks, setSocialLinks] = useState({});
 
   useEffect(() => {
     function loadLinks() {
@@ -62,7 +62,7 @@ export function Home() {
       <LinksContainer>
         {links.map((item, id) => (
           <section key={id} style={{ backgroundColor: item.bg }}>
-            <a href={item.url} target="blank">
+            <a href={item.url} target="_blank">
               <p style={{ color: item.color }}>{item.name}</p>
             </a>
           </section>
@@ -71,13 +71,13 @@ export function Home() {
 
       {links.length !== 0 && Object.keys(socialLinks).length > 0 && (
         <footer>
-          <Social url={socialLinks?.facebook} target="blank">
+          <Social url={socialLinks?.facebook} target="_blank">
             <FaFacebook size={35} color="#FFF" />
           </Social>
-          <Social url={socialLinks?.instagram} target="blank">
+          <Social url={socialLinks?.instagram} target="_blank">
             <FaInstagram size={35} color="#FFF" />
           </Social>
-          <Social url={socialLinks?.youtube} target="blank">
+          <Social url={socialLinks?.youtube} target="_blank">
             <FaYoutube size={35} color="#FFF" />
           </Social>
         </footer>
