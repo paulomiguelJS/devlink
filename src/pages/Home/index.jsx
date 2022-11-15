@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { Container, LinksContainer } from "./styles";
-import { Social } from "../../components/Social";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import { Logo } from "../../components/Logo";
-
 import { db } from "../../services/firebaseConnection";
+
 import {
   getDocs,
   collection,
@@ -22,22 +21,23 @@ export function Home() {
     function loadLinks() {
       const linksRef = collection(db, "links");
       const queryRef = query(linksRef, orderBy("created", "asc"));
+
       getDocs(queryRef).then((snapshot) => {
         let list = [];
-        snapshot.forEach((doc) =>
+        snapshot.forEach((doc) => {
           list.push({
             id: doc.id,
             name: doc.data().name,
             url: doc.data().url,
             bg: doc.data().bg,
             color: doc.data().color,
-          })
-        );
+          });
+        });
         setLinks(list);
       });
     }
     loadLinks();
-  });
+  }, []);
 
   useEffect(() => {
     function loadSocialLinks() {
@@ -57,12 +57,13 @@ export function Home() {
 
   return (
     <Container>
+      <Test />
       <Logo />
       <span>See my links</span>
       <LinksContainer>
         {links.map((item, id) => (
           <section key={id} style={{ backgroundColor: item.bg }}>
-            <a href={item.url} target="_blank">
+            <a href={item.url}>
               <p style={{ color: item.color }}>{item.name}</p>
             </a>
           </section>
@@ -71,13 +72,13 @@ export function Home() {
 
       {links.length !== 0 && Object.keys(socialLinks).length > 0 && (
         <footer>
-          <Social url={socialLinks?.facebook} target="_blank">
+          <Social href={socialLinks?.facebook}>
             <FaFacebook size={35} color="#FFF" />
           </Social>
-          <Social url={socialLinks?.instagram} target="_blank">
+          <Social href={socialLinks?.instagram}>
             <FaInstagram size={35} color="#FFF" />
           </Social>
-          <Social url={socialLinks?.youtube} target="_blank">
+          <Social href={socialLinks?.youtube}>
             <FaYoutube size={35} color="#FFF" />
           </Social>
         </footer>

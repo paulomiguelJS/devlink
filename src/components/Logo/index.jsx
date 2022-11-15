@@ -8,7 +8,6 @@ export function Logo() {
         <LogoLink>
           Dev<span>Link</span>
         </LogoLink>
-        ;
       </Link>
     </>
   );

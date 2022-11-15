@@ -27,6 +27,7 @@ export function Admin() {
   const [textColorInput, setTextColorInput] = useState("#121212");
 
   const [links, setLinks] = useState([]);
+  console.log(links);
 
   useEffect(() => {
     const linksRef = collection(db, "links");

@@ -13,11 +13,13 @@ export function Header() {
   return (
     <Container>
       <nav>
+
         <button onClick={handleLogout}>
           <BiLogOut size={28} color="#DB2629" />
         </button>
         <Link to="/admin">Admin</Link>
         <Link to="/admin/social">Social</Link>
+
       </nav>
     </Container>
   );

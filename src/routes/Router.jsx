@@ -21,7 +21,7 @@ export function Router() {
         }
       />
       <Route
-        path="/social"
+        path="admin/social"
         element={
           <Private>
             <Network />

@@ -1,8 +1,8 @@
 import { SocialIcon } from "./styles";
 
-export function Social({ children, url }) {
+export function Social({ children, href }) {
   return (
-    <SocialIcon href={url} rel="noopener noreferrer" target="_blank">
+    <SocialIcon href={href} rel="noopener noreferrer">
       {children}
     </SocialIcon>
   );
