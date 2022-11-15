@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { Container, LinksContainer } from "./styles";
+import { Social } from "../../components/Social";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import { Logo } from "../../components/Logo";
-import { db } from "../../services/firebaseConnection";
 
+import { db } from "../../services/firebaseConnection";
 import {
   getDocs,
   collection,
@@ -21,18 +22,17 @@ export function Home() {
     function loadLinks() {
       const linksRef = collection(db, "links");
       const queryRef = query(linksRef, orderBy("created", "asc"));
-
       getDocs(queryRef).then((snapshot) => {
         let list = [];
-        snapshot.forEach((doc) => {
+        snapshot.forEach((doc) =>
           list.push({
             id: doc.id,
             name: doc.data().name,
             url: doc.data().url,
             bg: doc.data().bg,
             color: doc.data().color,
-          });
-        });
+          })
+        );
         setLinks(list);
       });
     }
@@ -57,7 +57,6 @@ export function Home() {
 
   return (
     <Container>
-      <Test />
       <Logo />
       <span>See my links</span>
       <LinksContainer>
@@ -72,13 +71,13 @@ export function Home() {
 
       {links.length !== 0 && Object.keys(socialLinks).length > 0 && (
         <footer>
-          <Social href={socialLinks?.facebook}>
+          <a href={socialLinks?.facebook}>
             <FaFacebook size={35} color="#FFF" />
-          </Social>
-          <Social href={socialLinks?.instagram}>
+          </a>
+          <Social url={socialLinks?.instagram}>
             <FaInstagram size={35} color="#FFF" />
           </Social>
-          <Social href={socialLinks?.youtube}>
+          <Social url={socialLinks?.youtube}>
             <FaYoutube size={35} color="#FFF" />
           </Social>
         </footer>
