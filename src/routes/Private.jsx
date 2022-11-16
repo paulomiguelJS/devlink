@@ -3,7 +3,6 @@ import { Navigate } from "react-router-dom";
 
 import { auth } from "../services/firebaseConnection";
 import { onAuthStateChanged } from "firebase/auth";
-import { async } from "@firebase/util";
 
 export function Private({ children }) {
   const [loading, setLoading] = useState(true);

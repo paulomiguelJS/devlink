@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const InputContainer = styled.input`
-  border: 0;
-  height: 2rem;
+  height: 2.2rem;
   margin-bottom: 1rem;
-  border-radius: 4px;
   padding: 0 8px;
-  width: 400px;
-  ` 
+
+  border: 0;
+  border-radius: 4px;
+`;

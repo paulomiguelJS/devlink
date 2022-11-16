@@ -3,8 +3,9 @@ import styled from "styled-components";
 export const LogoLink = styled.h1`
   margin-top: 44px;
   margin-bottom: 28px;
-  color: #fff;
+
   font-size: 54px;
+  color: #fff;
 
   span {
     background: linear-gradient(#e18700, #ffd43a);

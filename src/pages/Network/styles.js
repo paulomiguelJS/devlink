@@ -7,18 +7,18 @@ export const Container = styled.div`
   min-height: 100vh;
   padding: 0 0 1rem 0;
 
-  h1 {
+  h2 {
     color: #fff;
     margin: 2rem;
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   form {
     display: flex;
     align-content: center;
     flex-direction: column;
-
-
+    width: 100%;
+    max-width: 600px;
     label {
       color: #fff;
       font-weight: medium;
@@ -36,11 +36,11 @@ export const Container = styled.div`
 
       border-radius: 4px;
       border: #3267ff;
-      height: 2rem;
+      height: 2.2rem;
 
       svg {
-      margin-left: 1rem;
-    }
+        margin-left: 1rem;
+      }
     }
   }
 `;

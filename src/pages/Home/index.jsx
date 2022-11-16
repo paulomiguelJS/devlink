@@ -58,11 +58,11 @@ export function Home() {
   return (
     <Container>
       <Logo />
-      <span>See my links</span>
+      <h3>My links</h3>
       <LinksContainer>
         {links.map((item, id) => (
           <section key={id} style={{ backgroundColor: item.bg }}>
-            <a href={item.url}>
+            <a href={"https://" + item.url}>
               <p style={{ color: item.color }}>{item.name}</p>
             </a>
           </section>
@@ -71,13 +71,13 @@ export function Home() {
 
       {links.length !== 0 && Object.keys(socialLinks).length > 0 && (
         <footer>
-          <a href={socialLinks?.facebook}>
+          <Social href={socialLinks?.facebook}>
             <FaFacebook size={35} color="#FFF" />
-          </a>
-          <Social url={socialLinks?.instagram}>
+          </Social>
+          <Social href={socialLinks?.instagram}>
             <FaInstagram size={35} color="#FFF" />
           </Social>
-          <Social url={socialLinks?.youtube}>
+          <Social href={socialLinks?.youtube}>
             <FaYoutube size={35} color="#FFF" />
           </Social>
         </footer>

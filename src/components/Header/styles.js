@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.header`
   width: 100%;
   max-width: 720px;
+
   margin-top: 1rem;
   padding: 0 1rem;
 
@@ -12,14 +13,16 @@ export const Container = styled.header`
 
     width: 100%;
     height: 48px;
-    border-radius: 4px;
+
     background-color: #fff;
+    border-radius: 4px;
 
     button {
-      border: 0;
-      background-color: transparent;
       margin-right: 2rem;
       margin-left: 1rem;
+
+      background-color: transparent;
+      border: 0;
     }
 
     a {

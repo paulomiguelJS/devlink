@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
+
 import { Header } from "../../components/Header";
+import {Logo} from "../../components/Logo"
 import { Input } from "../../components/Input";
 import { Container } from "./styles";
+
 import { MdAddLink } from "react-icons/md";
 import { toast } from "react-toastify";
 
@@ -47,7 +50,8 @@ export function Network() {
   return (
     <Container>
       <Header />
-      <h1>Your social medias</h1>
+      <Logo />
+      <h2>Your social medias</h2>
       <form onSubmit={handleSave}>
         <label>Facebook link</label>
         <Input

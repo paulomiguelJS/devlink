@@ -23,13 +23,15 @@ p{
 `;
 
 export const BackLink = styled(Link)`
+  margin-top: 1rem;
+  padding: 4px 16px;
+
+  color: #000;
   background-color: rgba(255, 255, 255, 0.6);
 
-  padding: 4px 16px;
-  margin-top: 1rem;
-  border-radius: 4px;
-  color: #000;
   transition: background-color, transform 0.5s;
+
+  border-radius: 4px;
   &:hover {
     background-color: #fff;
     transform: scale(1.05);
