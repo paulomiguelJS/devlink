@@ -6,11 +6,13 @@ import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
 import { Error } from "../pages/Error";
 import { Network } from "../pages/Network";
+import { SignIn } from "../pages/SignIn";
 
 export function Router() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<SignIn />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route
         path="/admin"
