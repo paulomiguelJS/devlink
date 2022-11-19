@@ -41,3 +41,21 @@ export const Container = styled.div`
     }
   }
 `;
+
+export const UserProfile = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  color: #fff;
+
+  margin-bottom: 2rem;
+
+  img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+  margin-bottom: 2rem;
+
+  }
+`;
