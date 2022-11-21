@@ -6,14 +6,17 @@ import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
 import { Error } from "../pages/Error";
 import { Network } from "../pages/Network";
-import { SignIn } from "../pages/SignIn";
+import { SignIn } from "../pages/Login/SignIn";
+import { SignUp } from "../pages/Login/SignUp";
 
 export function Router() {
   return (
     <Routes>
-      <Route path="/" element={<SignIn />} />
+      <Route path="/" element={<Login />} />
+      <Route path="/signin" element={<SignIn />} />
+      <Route path="/signup" element={<SignUp />} />
+
       <Route path="/home" element={<Home />} />
-      <Route path="/login" element={<Login />} />
       <Route
         path="/admin"
         element={
