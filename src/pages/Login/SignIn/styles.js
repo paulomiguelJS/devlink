@@ -9,36 +9,11 @@ export const Container = styled.div`
   height: 100vh;
   width: 100%;
 
-  padding-bottom: 10rem;
+  padding: 0 2rem 10rem;
 
-  h1,
-  p {
+  h1 {
     color: #fff;
-  }
-
-  button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 600px;
-
-    margin-top: 2rem;
-    padding: 0 2rem;
-
-    background-color: #3267ff;
-    color: #fff;
-
-    border-radius: 4px;
-    border-image: linear-gradient(to right, red, blue) 1;
-    height: 3rem;
-    font-size: 1.2rem;
-
-    &:hover {
-    }
-
-    svg {
-      margin-right: 1rem;
-    }
+    text-align: center;
   }
 `;
 
@@ -58,6 +33,7 @@ export const UserProfile = styled.div`
     margin-bottom: 2rem;
   }
 `;
+
 export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
@@ -65,14 +41,61 @@ export const FormContainer = styled.form`
   width: 80%;
   max-width: 400px;
 
+  color: #fff;
+
   button {
-    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    background: linear-gradient(#e18700, #ffd43a);
+    width: 400px;
+    max-width: 100%;
+    height: 3rem;
+
+    padding: 0 2rem;
+    background-color: transparent;
     color: #fff;
-    font-weight: bold;
 
-    border: 0;
     border-radius: 4px;
+    border-image: linear-gradient(to right, #ffd43a, #e18700) 1;
+
+    font-size: 1.2rem;
+    transition: border 0.5s;
+
+    &:hover {
+      border-image: linear-gradient(to right, #d10000, #ffd43a) 1;
+    }
+
+    svg {
+      margin-right: 1rem;
+    }
+  }
+
+  .logInBtn {
+    margin-top: 2rem;
+  }
+  
+  strong {
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 0.8rem;
+  }
+
+  span {
+    margin-top: 1rem;
+    text-align: end;
+
+    a {
+      color: #ffd43a;
+      transition: color 0.5s;
+
+      &:visited {
+        text-decoration: none;
+      }
+
+      &:hover {
+        color: #e18700;
+      }
+    }
   }
 `;

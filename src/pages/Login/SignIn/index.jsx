@@ -1,27 +1,30 @@
 import { Logo } from "../../../components/Logo";
+
 import { Container, UserProfile, FormContainer } from "./styles";
+
 import { FcGoogle } from "react-icons/fc";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+
 import { auth } from "../../../services/firebaseConnection";
+import {
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
+
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import { toast } from "react-toastify";
+
 import { Input } from "../../../components/Input";
 
-
 export function SignIn() {
+  const [user, setUser] = useState({});
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState({});
-  function handleGoogleSignIn() {
-    const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        setUser(result.user);
-        console.log(result);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
+
+  const navigate = useNavigate();
 
   function handleLogin(event) {
     event.preventDefault();
@@ -41,48 +44,58 @@ export function SignIn() {
       });
   }
 
+  function handleGoogleSignIn() {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        setUser(result.user);
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   return (
-    <>
-      <Container>
-        <Logo />
-        <UserProfile>
-          {user.photoURL && (
-            <img
-              src={user.photoURL}
-              alt="Profile Photo"
-              referrerpolicy="no-referrer"
-            />
-          )}
-          <strong>{user.displayName}</strong>
-          <small>{user.email}</small>
-        </UserProfile>
-        <h1>Access your account</h1>
-        <p>You can use your google account to log in to our plataform</p>
-        <Container>
-          <Logo />
-          <FormContainer onSubmit={handleLogin}>
-            <Input
-              type="email"
-              placeholder="Type your best e-mail..."
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <Input
-              type="password"
-              placeholder="********"
-              autoComplete="on"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+    <Container>
+      <Logo />
+      <h1>Access your account</h1>
+      <UserProfile>
+        {user.photoURL && (
+          <img
+            src={user.photoURL}
+            alt="Profile Photo"
+            referrerpolicy="no-referrer"
+          />
+        )}
+        <strong>{user.displayName}</strong>
+        <small>{user.email}</small>
+      </UserProfile>
 
-            <button type="submit">Log In</button>
-          </FormContainer>
-        </Container>
+      <FormContainer onSubmit={handleLogin}>
+        <Input
+          type="email"
+          placeholder="Type your best e-mail..."
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <Input
+          type="password"
+          placeholder="********"
+          autoComplete="on"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
+        <button className="logInBtn" type="submit">Log In</button>
+        <strong>OR</strong>
         <button type="button" onClick={handleGoogleSignIn}>
           <FcGoogle size={24} color="#fff" /> Login in with google
         </button>
-      </Container>
-    </>
+        <span>
+          Don't have an account? <a href="www.google.com">Sign Up</a>
+        </span>
+      </FormContainer>
+    </Container>
   );
 }
