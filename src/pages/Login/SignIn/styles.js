@@ -47,6 +47,8 @@ export const FormContainer = styled.form`
     display: flex;
     align-items: center;
     justify-content: center;
+    letter-spacing: 0.1rem;
+    font-size: 0.8rem;
 
     width: 400px;
     max-width: 100%;
@@ -59,7 +61,6 @@ export const FormContainer = styled.form`
     border-radius: 4px;
     border-image: linear-gradient(to right, #ffd43a, #e18700) 1;
 
-    font-size: 1.2rem;
     transition: border 0.5s;
 
     &:hover {
@@ -74,7 +75,7 @@ export const FormContainer = styled.form`
   .logInBtn {
     margin-top: 2rem;
   }
-  
+
   strong {
     text-align: center;
     margin: 1rem 0;
@@ -82,12 +83,19 @@ export const FormContainer = styled.form`
   }
 
   span {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.1rem;
+
     margin-top: 1rem;
-    text-align: end;
+
+    font-size: 0.8rem;
 
     a {
       color: #ffd43a;
       transition: color 0.5s;
+      font-size: 0.9rem;
 
       &:visited {
         text-decoration: none;

@@ -7,6 +7,11 @@ export const InputContainer = styled.input`
   border: transparent;
   border-radius: 4px;
 
+  &::placeholder {
+  font-size: 0.8rem;
+
+  }
+
   &:focus {
     outline: #ffd43a solid 3px;
   }

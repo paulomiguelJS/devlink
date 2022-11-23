@@ -75,7 +75,7 @@ export function SignIn() {
       <FormContainer onSubmit={handleLogin}>
         <Input
           type="email"
-          placeholder="Type your best e-mail..."
+          placeholder="joe@email.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -87,7 +87,9 @@ export function SignIn() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button className="logInBtn" type="submit">Log In</button>
+        <button className="logInBtn" type="submit">
+          Log In
+        </button>
         <strong>OR</strong>
         <button type="button" onClick={handleGoogleSignIn}>
           <FcGoogle size={24} color="#fff" /> Login in with google
