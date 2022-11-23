@@ -11,51 +11,52 @@ export const Container = styled.div`
 
   padding-bottom: 10rem;
 
-  h1,
-  p {
-    color: #fff;
+  color: #fff;
+
+  h2{
+    font-size: 2.5rem;
   }
+  strong {
+    margin-bottom: 2.5rem;
+    font-size: 0.9rem;
+
+  }
+`;
+export const FormContainer = styled.form`
+  display: flex;
+  flex-direction: column;
+
+  width: 80%;
+  max-width: 400px;
+
+  color: #fff;
 
   button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 600px;
+    letter-spacing: 0.1rem;
+    font-size: 0.8rem;
 
-    margin-top: 2rem;
+    width: 400px;
+    max-width: 100%;
+    height: 3rem;
+
+    margin-top: 1rem;
     padding: 0 2rem;
-
-    background-color: #3267ff;
+    background-color: transparent;
     color: #fff;
 
     border-radius: 4px;
-    border-image: linear-gradient(to right, red, blue) 1;
-    height: 3rem;
-    font-size: 1.2rem;
+    border-image: linear-gradient(to right, #ffd43a, #e18700) 1;
+
+    transition: border 0.5s;
 
     &:hover {
+      border-image: linear-gradient(to right, #d10000, #ffd43a) 1;
     }
 
     svg {
       margin-right: 1rem;
     }
-  }
-`;
-
-export const UserProfile = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-
-  color: #fff;
-
-  margin-bottom: 2rem;
-
-  img {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-  margin-bottom: 2rem;
-
-  }
-`;
+  }` 
