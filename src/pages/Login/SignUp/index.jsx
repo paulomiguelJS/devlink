@@ -6,7 +6,7 @@ import { Container, FormContainer } from "./styles";
 import { auth } from "../../../services/firebaseConnection";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 
 export function SignUp() {
@@ -50,6 +50,9 @@ export function SignUp() {
         />
 
         <button type="submit">Create new account</button>
+        <span>
+          Do you already have an account? <Link to="/">Sign In</Link>
+        </span>
       </FormContainer>
     </Container>
   );

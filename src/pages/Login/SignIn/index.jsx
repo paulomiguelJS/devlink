@@ -12,7 +12,7 @@ import {
 } from "firebase/auth";
 
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import { toast } from "react-toastify";
 
@@ -28,15 +28,16 @@ export function SignIn() {
 
   function handleLogin(event) {
     event.preventDefault();
+
     if (email === "" || password === "") {
       alert("Please fill the fields");
       return;
     }
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
+        navigate("/admin", { replace: true  });
         toast.success("Welcome to our plataform");
 
-        navigate("/admin", { replace: true });
       })
       .catch(() => {
         toast.error("Error, try again");
@@ -48,8 +49,10 @@ export function SignIn() {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
       .then((result) => {
+        navigate("/admin", { replace: true  });
         setUser(result.user);
-        console.log(result);
+
+        toast.success("Welcome to our plataform");
       })
       .catch((error) => {
         console.log(error);
@@ -95,7 +98,7 @@ export function SignIn() {
           <FcGoogle size={24} color="#fff" /> Login in with google
         </button>
         <span>
-          Don't have an account? <a href="www.google.com">Sign Up</a>
+          Don't have an account? <Link to="/signup">Sign Up</Link>
         </span>
       </FormContainer>
     </Container>
