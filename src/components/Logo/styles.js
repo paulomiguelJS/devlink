@@ -2,9 +2,8 @@ import styled from "styled-components";
 
 export const LogoLink = styled.h1`
   margin-top: 44px;
-  margin-bottom: 28px;
 
-  font-size: 54px;
+  font-size: 3rem;
   color: #fff;
 
   span {

@@ -13,15 +13,15 @@ export const Container = styled.div`
 
   color: #fff;
 
-  h2{
-    font-size: 2.5rem;
+  h2 {
+    font-size: 2rem;
   }
   strong {
     margin-bottom: 2.5rem;
     font-size: 0.9rem;
-
   }
 `;
+
 export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
@@ -59,4 +59,30 @@ export const FormContainer = styled.form`
     svg {
       margin-right: 1rem;
     }
-  }` 
+  }
+  
+  span {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.1rem;
+
+      margin-top: 1rem;
+
+      font-size: 0.8rem;
+
+      a {
+        color: #ffd43a;
+        transition: color 0.5s;
+        font-size: 0.9rem;
+
+        &:visited {
+          text-decoration: none;
+        }
+
+        &:hover {
+          color: #e18700;
+        }
+      }
+    }
+`;
