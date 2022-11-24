@@ -1,5 +1,5 @@
 <div align='center'>
-<img src='./README/hero.png'>
+<img src='./Readme/hero.png'>
 
 <div>
     <img src="https://img.shields.io/github/repo-size/paulomigueljs/linktree">
