@@ -6,7 +6,7 @@ export const Container = styled.div`
   flex-direction: column;
 
   min-height: 100vh;
-  
+
   padding: 0 0 1rem 0;
 
   h2 {
@@ -25,18 +25,18 @@ export const Container = styled.div`
     width: 80%;
     max-width: 600px;
 
-    background-color: #423423;
+    background-color: ${(props) => props.theme["brown-800"]};
     border-radius: 4px;
   }
 
   button {
     padding: 4px 8px;
 
-    background-color: #000;
+    background-color: ${(props) => props.theme["black-900"]};
     color: #fff;
 
     border-radius: 4px;
-    border: 1.5px dashed #fff;
+    border: 1.5px dashed ${(props) => props.theme["white-100"]};
   }
 
   .animate-pop {
@@ -63,7 +63,7 @@ export const FormContainer = styled.form`
   width: 80%;
   max-width: 400px;
 
-  color: #fff;
+  color: ${(props) => props.theme["white-100"]};
 
   button {
     display: flex;
@@ -79,15 +79,25 @@ export const FormContainer = styled.form`
     margin-top: 1rem;
     padding: 0 2rem;
     background-color: transparent;
-    color: #fff;
+    color: ${(props) => props.theme["white-100"]};
 
     border-radius: 4px;
-    border-image: linear-gradient(to right, #ffd43a, #e18700) 1;
+    border-image: linear-gradient(
+        to right,
+        ${(props) => props.theme["yellow-400"]},
+        ${(props) => props.theme["yellow-800"]}
+      )
+      1;
 
     transition: border 0.5s;
 
     &:hover {
-      border-image: linear-gradient(to right, #d10000, #ffd43a) 1;
+      border-image: linear-gradient(
+          to right,
+          ${(props) => props.theme["red-200"]} 0,
+          ${(props) => props.theme["yellow-400"]}
+        )
+        1;
     }
 
     svg {
@@ -96,7 +106,7 @@ export const FormContainer = styled.form`
   }
 
   label {
-    color: #fff;
+    color: ${(props) => props.theme["white-100"]};
     font-weight: medium;
 
     margin: 1rem 0 0.5rem 0;
@@ -111,8 +121,6 @@ export const FormContainer = styled.form`
       margin-left: 1rem;
     }
   }
-
- 
 `;
 
 export const Preview = styled.div`
@@ -126,7 +134,7 @@ export const Preview = styled.div`
   border: 1.5px solid rgba(255, 255, 255, 0.5);
 
   label {
-    color: #fff;
+    color: ${(props) => props.theme["white-100"]};
     font-weight: medium;
 
     margin-bottom: 1rem;

@@ -8,7 +8,7 @@ export const Container = styled.div`
   padding: 0 0 1rem 0;
 
   h2 {
-    color: #fff;
+    color: ${(props) => props.theme["white-100"]};
     margin: 2rem;
     font-size: 2rem;
   }
@@ -20,7 +20,7 @@ export const Container = styled.div`
     width: 100%;
     max-width: 600px;
     label {
-      color: #fff;
+      color: ${(props) => props.theme["white-100"]};
       font-weight: medium;
       margin: 1rem 0 0.5rem 0;
     }
@@ -31,11 +31,11 @@ export const Container = styled.div`
       justify-content: center;
       margin-top: 1rem;
 
-      background-color: #3267ff;
-      color: #fff;
+      background-color: ${(props) => props.theme["blue-300"]};
+      color: ${(props) => props.theme["white-100"]};
 
       border-radius: 4px;
-      border: #3267ff;
+      border: ${(props) => props.theme["blue-300"]};
       height: 2.2rem;
 
       svg {

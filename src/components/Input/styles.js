@@ -8,11 +8,10 @@ export const InputContainer = styled.input`
   border-radius: 4px;
 
   &::placeholder {
-  font-size: 0.8rem;
-
+    font-size: 0.8rem;
   }
 
   &:focus {
-    outline: #ffd43a solid 3px;
+    outline: ${(props) => props.theme["yellow-400"]} solid 3px;
   }
 `;

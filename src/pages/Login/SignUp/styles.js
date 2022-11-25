@@ -11,7 +11,7 @@ export const Container = styled.div`
 
   padding-bottom: 10rem;
 
-  color: #fff;
+  color: ${(props) => props.theme["white-100"]};
 
   h2 {
     font-size: 2rem;
@@ -29,7 +29,7 @@ export const FormContainer = styled.form`
   width: 80%;
   max-width: 400px;
 
-  color: #fff;
+  color: ${(props) => props.theme["white-100"]};
 
   button {
     display: flex;
@@ -45,7 +45,7 @@ export const FormContainer = styled.form`
     margin-top: 1rem;
     padding: 0 2rem;
     background-color: transparent;
-    color: #fff;
+    color: ${(props) => props.theme["white-100"]};
 
     border-radius: 4px;
     border-image: linear-gradient(to right, #ffd43a, #e18700) 1;
@@ -60,29 +60,29 @@ export const FormContainer = styled.form`
       margin-right: 1rem;
     }
   }
-  
+
   span {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 0.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.1rem;
 
-      margin-top: 1rem;
+    margin-top: 1rem;
 
-      font-size: 0.8rem;
+    font-size: 0.8rem;
 
-      a {
-        color: #ffd43a;
-        transition: color 0.5s;
-        font-size: 0.9rem;
+    a {
+      color: yellow;
+      color: ${(props) => props.theme["yellow-400"]};
+      transition: color 0.5s;
+      font-size: 0.9rem;
+      D &:visited {
+        text-decoration: none;
+      }
 
-        &:visited {
-          text-decoration: none;
-        }
-
-        &:hover {
-          color: #e18700;
-        }
+      &:hover {
+        color: ${(props) => props.theme["yellow-800"]};
       }
     }
+  }
 `;

@@ -39,10 +39,10 @@ export const LinksContainer = styled.main`
     padding: 8px 0;
 
     user-select: none;
-    background-color: #fff;
+    background-color: ${(props) => props.theme["white-100"]};
 
     border-radius: 4px;
-    
+
     transition: transform 0.7s;
 
     &:hover {
@@ -51,7 +51,7 @@ export const LinksContainer = styled.main`
     p {
       font-size: 1rem;
       line-height: 150%;
-      color: #000;
+      color: ${(props) => props.theme["black-900"]};
     }
   }
 `;

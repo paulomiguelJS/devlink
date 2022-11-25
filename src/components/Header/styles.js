@@ -14,7 +14,7 @@ export const Container = styled.header`
     width: 100%;
     height: 48px;
 
-    background-color: #fff;
+    background-color: ${(props) => props.theme["white-100"]};
     border-radius: 4px;
 
     button {
@@ -27,11 +27,11 @@ export const Container = styled.header`
 
     a {
       margin-right: 1rem;
-      color: #21242d;
+      color: ${(props) => props.theme["black-600"]};
       transition: color 0.4s;
 
       &:hover {
-        color: #eda617;
+        color: ${(props) => props.theme["yellow-700"]};
       }
     }
   }

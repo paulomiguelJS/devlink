@@ -7,7 +7,10 @@ export const LogoLink = styled.h1`
   color: #fff;
 
   span {
-    background: linear-gradient(#e18700, #ffd43a);
+    background: linear-gradient(
+      ${(props) => props.theme["yellow-800"]},
+      ${(props) => props.theme["yellow-400"]}
+    );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
