@@ -50,7 +50,7 @@ export function SignIn() {
     signInWithPopup(auth, provider)
       .then((result) => {
         navigate("/admin", { replace: true });
-        
+
         setUser(result.user);
 
         toast.success("Welcome to our plataform");
@@ -91,18 +91,13 @@ export function SignIn() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Button
-          onClick={handleLogin}
-          className="googleLogIn"
-          type="submit"
-          title="Log In"
-        />
+        <Button className="googleLogIn" type="submit" title="Log In" />
 
         <strong>OR</strong>
 
         <Button
+          type="button"
           onClick={handleGoogleSignIn}
-          type="submit"
           title="Log in with google"
         >
           <FcGoogle size={24} color="#fff" />
