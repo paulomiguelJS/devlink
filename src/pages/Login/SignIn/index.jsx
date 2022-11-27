@@ -34,6 +34,7 @@ export function SignIn() {
       toast.warning("Please fill the fields");
       return;
     }
+
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
         navigate("/admin", { replace: true });
@@ -49,12 +50,14 @@ export function SignIn() {
     signInWithPopup(auth, provider)
       .then((result) => {
         navigate("/admin", { replace: true });
+        
         setUser(result.user);
 
         toast.success("Welcome to our plataform");
       })
       .catch((error) => {
         console.log(error);
+        toast.error("Error, try again");
       });
   }
 
@@ -88,9 +91,15 @@ export function SignIn() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Button type="submit" title="Log In" />
+        <Button
+          onClick={handleLogin}
+          className="googleLogIn"
+          type="submit"
+          title="Log In"
+        />
 
         <strong>OR</strong>
+
         <Button
           onClick={handleGoogleSignIn}
           type="submit"

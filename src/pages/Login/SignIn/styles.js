@@ -81,9 +81,15 @@ export const FormContainer = styled.form`
       margin-right: 1rem;
     }
   }
-
-  .logInBtn {
+  .googleLogIn {
     margin-top: 2rem;
+  }
+
+  Button {
+    svg {
+      margin-left: 1rem;
+      order: -1;
+    }
   }
 
   strong {

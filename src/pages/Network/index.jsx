@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { Header } from "../../components/Header";
-import {Logo} from "../../components/Logo"
+import { Logo } from "../../components/Logo";
 import { Input } from "../../components/Input";
 import { Container } from "./styles";
 
@@ -40,6 +40,9 @@ export function Network() {
       .then(() => {
         toast.success("The links have been saved");
         console.log("Success");
+        setFacebook("");
+        setInstagram("");
+        setYoutube("");
       })
       .catch((error) => {
         toast.error("Error, the links haven't saved");
