@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Header } from "../../components/Header";
-import { Logo } from "../../components/Logo";
 import { Input } from "../../components/Input";
+import { Button } from "../../components/Button";
 
 import { db } from "../../services/firebaseConnection";
 import {
@@ -18,7 +18,7 @@ import { MdAddLink } from "react-icons/md";
 import { FiTrash2 } from "react-icons/fi";
 import { toast } from "react-toastify";
 
-import { Container, FormContainer, Preview } from "./styles";
+import { Container, FormContainer, Preview, DeleteButton } from "./styles";
 
 export function Admin() {
   const [nameInput, setNameInput] = useState("");
@@ -81,7 +81,6 @@ export function Admin() {
   return (
     <Container>
       <Header />
-      <Logo />
       <FormContainer onSubmit={handleRegister}>
         <label>Link Name</label>
         <Input
@@ -123,9 +122,9 @@ export function Admin() {
             </article>
           </Preview>
         )}
-        <button type="submit">
-          Add new link <MdAddLink size={24} color="#fff" />
-        </button>
+        <Button type="submit" title="Add new Link">
+          <MdAddLink size={24} color="#fff" />
+        </Button>
       </FormContainer>
 
       <h2>My Links</h2>
@@ -138,9 +137,9 @@ export function Admin() {
         >
           <p>{item.name}</p>
           <div>
-            <button onClick={() => handleDeleteLink(item.id)}>
-              <FiTrash2 size={18} color="#fff" />
-            </button>
+            <DeleteButton onClick={() => handleDeleteLink(item.id)}>
+              <FiTrash2 size={14} color="#fff" />
+            </DeleteButton>
           </div>
         </article>
       ))}

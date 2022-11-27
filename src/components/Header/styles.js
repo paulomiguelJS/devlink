@@ -12,7 +12,7 @@ export const Container = styled.header`
     align-items: center;
 
     width: 100%;
-    height: 48px;
+    height: 3rem;
 
     background-color: ${(props) => props.theme["white-100"]};
     border-radius: 4px;

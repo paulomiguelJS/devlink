@@ -1,11 +1,12 @@
 import { Btn } from "./styles";
 
-export function Button () {
-  return(
+export function Button({ onClick, title, children }) {
+  return (
     <>
-    <Btn>
-      
-    </Btn>
+      <Btn onClick={onClick}>
+        {title}
+        {children}
+      </Btn>
     </>
-  )
+  );
 }

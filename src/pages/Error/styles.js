@@ -25,7 +25,7 @@ export const BackLink = styled(Link)`
   margin-top: 1rem;
   padding: 4px 16px;
 
-  color: ${(props) => props.theme["black-900"]}#000;
+  color: ${(props) => props.theme["black-900"]};
   background-color: rgba(255, 255, 255, 0.6);
 
   transition: background-color, transform 0.5s;
