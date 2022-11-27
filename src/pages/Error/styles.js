@@ -22,17 +22,35 @@ export const Container = styled.div`
 `;
 
 export const BackLink = styled(Link)`
-  margin-top: 1rem;
-  padding: 4px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  color: ${(props) => props.theme["black-900"]};
-  background-color: rgba(255, 255, 255, 0.6);
+  margin-top: 2rem;
 
-  transition: background-color, transform 0.5s;
+  letter-spacing: 0.1rem;
+  font-size: 0.8rem;
+
+  width: 400px;
+  max-width: 100%;
+  height: 3rem;
+
+  padding: 0 2rem;
+  background-color: transparent;
+  color: ${(props) => props.theme["white-100"]};
 
   border-radius: 4px;
+
+  border: 1px solid ${(props) => props.theme["yellow-400"]};
+
+  transition: border 0.5s;
+
   &:hover {
-    background-color: ${(props) => props.theme["white-100"]};
-    transform: scale(1.05);
+    border-image: linear-gradient(
+        to right,
+        ${(props) => props.theme["red-200"]},
+        ${(props) => props.theme["yellow-400"]}
+      )
+      1;
   }
 `;

@@ -1,7 +1,6 @@
 import { Container } from "./styles";
 import { BiLogOut } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import { Logo } from "../Logo";
 
 import { auth } from "../../services/firebaseConnection";
 import { signOut } from "firebase/auth";
@@ -15,7 +14,9 @@ export function Header() {
     <Container>
       <nav>
         <button onClick={handleLogout}>
-          <BiLogOut size={28} color="#DB2629" />
+          <Link to="/">
+            <BiLogOut size={28} color="#DB2629" />
+          </Link>
         </button>
         <Link to="/admin">Admin</Link>
         <Link to="/admin/social">Social</Link>

@@ -1,4 +1,5 @@
 import { Logo } from "../../../components/Logo";
+import { Button } from "../../../components/Button";
 
 import { Container, UserProfile, FormContainer } from "./styles";
 
@@ -30,18 +31,16 @@ export function SignIn() {
     event.preventDefault();
 
     if (email === "" || password === "") {
-      alert("Please fill the fields");
+      toast.warning("Please fill the fields");
       return;
     }
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
-        navigate("/admin", { replace: true  });
+        navigate("/admin", { replace: true });
         toast.success("Welcome to our plataform");
-
       })
       .catch(() => {
         toast.error("Error, try again");
-        console.log("Error");
       });
   }
 
@@ -49,7 +48,7 @@ export function SignIn() {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
       .then((result) => {
-        navigate("/admin", { replace: true  });
+        navigate("/admin", { replace: true });
         setUser(result.user);
 
         toast.success("Welcome to our plataform");
@@ -89,14 +88,17 @@ export function SignIn() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        <Button type="submit" title="Log In" />
 
-        <button className="logInBtn" type="submit">
-          Log In
-        </button>
         <strong>OR</strong>
-        <button type="button" onClick={handleGoogleSignIn}>
-          <FcGoogle size={24} color="#fff" /> Login in with google
-        </button>
+        <Button
+          onClick={handleGoogleSignIn}
+          type="submit"
+          title="Log in with google"
+        >
+          <FcGoogle size={24} color="#fff" />
+        </Button>
+
         <span>
           Don't have an account? <Link to="/signup">Sign Up</Link>
         </span>
