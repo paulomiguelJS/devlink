@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 
 import { db } from "../../services/firebaseConnection";
 import { setDoc, doc, getDoc } from "firebase/firestore";
+import { Button } from "../../components/Button";
 
 export function Network() {
   const [facebook, setFacebook] = useState("");
@@ -53,31 +54,29 @@ export function Network() {
   return (
     <Container>
       <Header />
-      <Logo />
       <h2>Your social medias</h2>
       <form onSubmit={handleSave}>
-        <label>Facebook link</label>
+        <label>Facebook </label>
         <Input
-          placeholder="Type your facebook url"
+          placeholder="Facebook URL"
           value={facebook}
           onChange={(e) => setFacebook(e.target.value)}
         />
-        <label>Instagram link</label>
+        <label>Instagram URL</label>
         <Input
-          placeholder="Type your Instagram url"
+          placeholder="Instagram URL"
           valye={instagram}
           onChange={(e) => setInstagram(e.target.value)}
         />
-        <label>Youtube link</label>
+        <label>Youtube URL</label>
         <Input
-          placeholder="Type your Youtube url"
+          placeholder="Youtube URL"
           value={youtube}
           onChange={(e) => setYoutube(e.target.value)}
         />
-
-        <button type="submit">
-          Save links <MdAddLink size={24} color="#fff" />
-        </button>
+        <Button type="submit" title="Save URLs">
+          <MdAddLink size={24} color="#fff" />
+        </Button>
       </form>
     </Container>
   );

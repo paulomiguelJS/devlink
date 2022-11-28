@@ -52,7 +52,7 @@ export const FormContainer = styled.form`
 
   margin-top: 3rem;
 
-  width: 80%;
+  width: 90%;
   max-width: 400px;
 
   color: ${(props) => props.theme["white-100"]};
@@ -64,6 +64,10 @@ export const FormContainer = styled.form`
     margin: 1rem 0 0.5rem 0;
   }
 
+  Button {
+    margin-top: 2rem;
+  }
+  
   section {
     display: flex;
     margin: 1rem 0;

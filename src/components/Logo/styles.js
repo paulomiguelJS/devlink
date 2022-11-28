@@ -1,10 +1,8 @@
 import styled from "styled-components";
 
 export const LogoLink = styled.h1`
-  margin-top: 44px;
-
-  font-size: 3rem;
-  color: #fff;
+  font-size: ${(props) => (props.variant === "smaller" ? "1.5rem" : "3rem")};
+  color: ${(props) => (props.variant === "smaller" ? "#000" : "#fff")};
 
   span {
     background: linear-gradient(
@@ -14,7 +12,7 @@ export const LogoLink = styled.h1`
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 54px;
+    font-size: ${(props) => (props.variant === "smaller" ? "2rem" : "3.5rem")};
     font-weight: bold;
   }
 `;
