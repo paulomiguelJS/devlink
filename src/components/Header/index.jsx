@@ -22,7 +22,9 @@ export function Header() {
           </button>
           <Link to="/admin">Admin</Link>
           <Link to="/admin/social">Social</Link>
-          <Link to="/home">My Links</Link>
+          <Link target="_blank" rel="noopener noreferrer" to="/home">
+            My Links
+          </Link>
         </div>
         <Logo variant="smaller" />
       </nav>

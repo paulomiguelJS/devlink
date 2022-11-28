@@ -27,5 +27,9 @@ export const Container = styled.div`
       font-weight: medium;
       margin: 1rem 0 0.5rem 0;
     }
+
+    Button {
+      margin-top: 2rem;
+    }
   }
 `;
