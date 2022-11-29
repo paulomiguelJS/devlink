@@ -1,7 +1,7 @@
 import { Logo } from "../../../components/Logo";
 import { Button } from "../../../components/Button";
 
-import { Container, UserProfile, FormContainer } from "./styles";
+import { Container, FormContainer } from "./styles";
 
 import { FcGoogle } from "react-icons/fc";
 
@@ -20,10 +20,9 @@ import { toast } from "react-toastify";
 import { Input } from "../../../components/Input";
 
 export function SignIn() {
-  const [user, setUser] = useState({});
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [user, setUser] = useState({})
 
   const navigate = useNavigate();
 
@@ -36,8 +35,9 @@ export function SignIn() {
     }
 
     signInWithEmailAndPassword(auth, email, password)
-      .then(() => {
+      .then((result) => {
         navigate("/admin", { replace: true });
+        setUser(result);
         toast.success("Welcome to our plataform");
       })
       .catch(() => {
@@ -49,14 +49,11 @@ export function SignIn() {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
       .then((result) => {
-        navigate("/admin", { replace: true });
-
         setUser(result.user);
-
+        navigate("/admin", { replace: true });
         toast.success("Welcome to our plataform");
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
         toast.error("Error, try again");
       });
   }
@@ -65,18 +62,15 @@ export function SignIn() {
     <Container>
       <Logo />
       <h1>Access your account</h1>
-      <UserProfile>
-        {user.photoURL && (
-          <img
-            src={user.photoURL}
-            alt="Profile Photo"
-            referrerpolicy="no-referrer"
-          />
-        )}
-        <strong>{user.displayName}</strong>
-        <small>{user.email}</small>
-      </UserProfile>
-
+      {user.photoURL && (
+        <img
+          src={user.photoURL}
+          alt="Profile Photo"
+          referrerpolicy="no-referrer"
+        />
+      )}
+      <strong>{user.displayName}</strong>
+      <small>{user.email}</small>
       <FormContainer onSubmit={handleLogin}>
         <Input
           type="email"

@@ -46,6 +46,22 @@ export const Container = styled.div`
   }
 `;
 
+export const UserProfile = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  color: ${(props) => props.theme["white-100"]};
+
+  margin-bottom: 2rem;
+
+  img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+  }
+`;
 export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
@@ -67,7 +83,7 @@ export const FormContainer = styled.form`
   Button {
     margin-top: 2rem;
   }
-  
+
   section {
     display: flex;
     margin: 1rem 0;

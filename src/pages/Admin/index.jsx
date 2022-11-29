@@ -18,7 +18,13 @@ import { MdAddLink } from "react-icons/md";
 import { FiTrash2 } from "react-icons/fi";
 import { toast } from "react-toastify";
 
-import { Container, FormContainer, Preview, DeleteButton } from "./styles";
+import {
+  Container,
+  FormContainer,
+  Preview,
+  DeleteButton,
+  UserProfile,
+} from "./styles";
 
 export function Admin() {
   const [nameInput, setNameInput] = useState("");
@@ -32,7 +38,7 @@ export function Admin() {
     const linksRef = collection(db, "links");
     const queryRef = query(linksRef, orderBy("created", "asc"));
 
-    const unsub = onSnapshot(queryRef, (snapshot) => {
+    onSnapshot(queryRef, (snapshot) => {
       let list = [];
       snapshot.forEach((doc) => {
         list.push({
@@ -68,7 +74,7 @@ export function Admin() {
 
         console.log("The link has been registred");
       })
-      .catch((error) => {
+      .catch(() => {
         toast.error("Ops, error to save the link");
       });
   }
@@ -81,6 +87,10 @@ export function Admin() {
   return (
     <Container>
       <Header />
+      <UserProfile>
+        
+      </UserProfile>
+
       <FormContainer onSubmit={handleRegister}>
         <label>Link Name</label>
         <Input
