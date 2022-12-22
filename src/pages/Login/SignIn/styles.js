@@ -11,9 +11,10 @@ export const Container = styled.div`
 
   padding: 0 2rem 10rem;
 
-  h1 {
+  h2 {
     color: ${(props) => props.theme["white-100"]};
     text-align: center;
+    margin-bottom: 1rem;
   }
 `;
 

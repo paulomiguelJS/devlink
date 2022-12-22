@@ -61,7 +61,7 @@ export function SignIn() {
   return (
     <Container>
       <Logo />
-      <h1>Access your account</h1>
+      <h2>Access your account</h2>
       {user.photoURL && (
         <img
           src={user.photoURL}
